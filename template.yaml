@@ -1,0 +1,19 @@
+Resources:
+  default:
+    Type: TencentCloud::Serverless::Namespace
+    magisk_channel_mirror:
+      Properties:
+        CodeUri: .
+        Description: Magisk 更新通道镜像
+        Environment:
+          Variables: {}
+        Events: {}
+        Handler: index.main
+        MemorySize: 64
+        Runtime: Python3.6
+        Timeout: 60
+        VpcConfig:
+          SubnetId: ''
+          VpcId: ''
+      Type: TencentCloud::Serverless::Function
+# For more information: https://github.com/serverless-components/tencent-scf/blob/v2/doc/configure.md
