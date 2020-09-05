@@ -18,13 +18,13 @@ def raw_to_jsdelivr(url):
 
 def main(event, context):
     print(event)
-    channel_list = ('stable', 'beta', 'canary', 'debug')
+    channel_list = ('stable', 'beta', 'canary')
     args = event['queryString']
     channel = args.get('channel')
     if(channel not in channel_list):
         channel = 'stable'
     if(channel == 'canary'):
-        channel = 'release'
+        channel = 'debug'
     if(channel in ('stable', 'beta')):
         branch = 'master'
     else:
